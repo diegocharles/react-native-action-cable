@@ -17,8 +17,8 @@ class Subscription extends EventEmitter
   unsubscribe: =>
     @consumer.subscriptions.remove(this)
 
-  connected: =>
-    @emit('connected')
+  connected (data): =>
+    @emit('connected', data)
 
   disconnected: =>
     @emit('disconnected')

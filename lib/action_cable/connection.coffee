@@ -88,6 +88,9 @@ class Connection
 
       { identifier, message, type } = JSON.parse(event.data)
       event.data.close() if event.data.close?
+      console.log('[Identifier] ' + identifier)
+      console.log('[Message] ' + message)
+      console.log('[type] ' + type)
 
       switch type
         when message_types.welcome

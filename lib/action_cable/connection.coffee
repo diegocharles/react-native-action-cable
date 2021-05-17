@@ -96,7 +96,7 @@ class Connection
         when message_types.ping
           @monitor.recordPing()
         when message_types.confirmation
-          @subscriptions.notify(identifier, "connected")
+          @subscriptions.notify(identifier, "connected", message)
         when message_types.rejection
           @subscriptions.reject(identifier)
         else
